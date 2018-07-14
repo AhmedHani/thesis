@@ -1,0 +1,3 @@
+Total Samples: 1530812
+Total Different Sentences: 3061624
+Total Vocab Size: 16176

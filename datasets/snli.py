@@ -4,7 +4,6 @@ import shutil
 import codecs
 
 
-
 class SNLIDataset(object):
 
     def __init__(self, download_link=vars.SNLI_DOWNLOAD_LINK):
@@ -17,11 +16,16 @@ class SNLIDataset(object):
 
     @staticmethod
     def __download_and_extract(download_link):
-        import requests, zipfile, io
+        import zipfile, urllib.request
 
-        r = requests.get(download_link)
-        z = zipfile.ZipFile(io.BytesIO(r.content))
-        z.extractall()
+        url = download_link
+        file_name = vars.SNLI_ZIP
+
+        with urllib.request.urlopen(url) as response, open(file_name, 'wb') as out_file:
+            shutil.copyfileobj(response, out_file)
+
+            with zipfile.ZipFile(file_name) as zf:
+                zf.extractall()
 
     @staticmethod
     def __zip_existed():
@@ -139,5 +143,3 @@ class SNLIDataset(object):
                         + [word.replace("\"", "") for item in test_datalist for word in item[1].split()]))))
 
             writer.write('\n')
-
-SNLIDataset()

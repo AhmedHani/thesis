@@ -1,0 +1,23 @@
+Train File Info:
+Total Samples: 550152
+Total Different Sentences: 1100304
+Total Neutral Sentences: 182764
+Total Entailment Sentences: 183416
+Total Contradiction Sentences: 183187
+Total Vocab Size: 62105
+
+DEV File Info:
+Total Samples: 10000
+Total Different Sentences: 20000
+Total Neutral Sentences: 3235
+Total Entailment Sentences: 3329
+Total Contradiction Sentences: 3278
+Total Vocab Size: 9158
+
+Test File Info:
+Total Samples: 10000
+Total Different Sentences: 20000
+Total Neutral Sentences: 3219
+Total Entailment Sentences: 3368
+Total Contradiction Sentences: 3237
+Total Vocab Size: 9342

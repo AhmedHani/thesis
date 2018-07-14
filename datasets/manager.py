@@ -1,15 +1,17 @@
 import sys
+
 sys.path.append('../')
 
 import argparse
 from datasets.quora import QuoraQuestionsPairDataset
+from datasets.snli import SNLIDataset
 import vars
 
 parser = argparse.ArgumentParser(description='This script is responsible for downloading '
                                              'and preparing the needed datasets')
 
 parser.add_argument('--datasets',
-                    default='quora,mscoco,ppdb',
+                    default='quora,mscoco,ppdb,snli',
                     type=str,
                     help='dataset1,dataset2,dataset3')
 
@@ -21,5 +23,7 @@ chosen = str(datasets).split(',')
 for choice in chosen:
     if choice == 'quora':
         q = QuoraQuestionsPairDataset(download_link=vars.QUORA_QUESTIONS_PAIRS_DOWNLOAD_LINK)
+    elif choice == 'snli':
+        snli = SNLIDataset(download_link=vars.SNLI_DOWNLOAD_LINK)
 
 print('Success!')

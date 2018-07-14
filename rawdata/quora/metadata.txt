@@ -1,0 +1,5 @@
+Total Samples: 404279
+Total Different Sentences: 808558
+Total Non-Paraphrase: 255016
+Total Paraphrase: 149263
+Total Vocab Size: 222002
